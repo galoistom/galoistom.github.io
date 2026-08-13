@@ -325,7 +325,7 @@
 
     /* ---------- boot ---------- */
     const go = new Go();
-    WebAssembly.instantiateStreaming(fetch("tiny_calc.wasm?v=" + Date.now()), go.importObject)
+    WebAssembly.instantiateStreaming(fetch("calc.wasm?v=" + Date.now()), go.importObject)
       .then((result) => {
         go.run(result.instance);
         statusEl.textContent = "ready";
