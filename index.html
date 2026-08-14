@@ -258,6 +258,19 @@
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         evalCode();
+      } else if (e.key === "Backspace") {
+          const s = input.selectionStart;
+          const ePos = input.selectionEnd;
+          if (s === ePos && s > 0) {
+              const left = input.value[s - 1];
+              const right = input.value[s];
+              if ((left === "(" && right === ")") || (left === '"' && right === '"')) {
+                  e.preventDefault();
+                  input.value = input.value.slice(0, s - 1) + input.value.slice(s + 1);
+                  input.setSelectionRange(s - 1, s - 1);
+                  autosize();
+              }
+          }
       } else if (e.key === "(") {
         e.preventDefault();
         insertAtCursor("()", 1);
