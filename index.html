@@ -296,13 +296,16 @@
 
     /* ---------- examples ---------- */
     const EXAMPLES = [
-      '(map (lambda (x) (* x x)) (list 1 2 3 4 5))',
-      '(define (fib n) (if (< n 2) n (+ (fib (- n 1)) (fib (- n 2))))) (map fib (list 0 1 2 3 4 5 6 7 8 9 10))',
-      '(define (fact n) (if (<= n 1) 1 (* n (fact (- n 1))))) (fact 10)',
-      '(filter (lambda (x) (> x 5)) (map (lambda (x) (* x x)) (list 1 2 3 4 5)))',
-      '(fold + 0 (list 1 2 3 4 5 6 7 8 9 10))',
-      '(let ((x 10) (y 20)) (+ x y))',
-      '(car (cdr (list 1 2 3 4 5)))',
+        '(arcsin (sin Pi))',
+        '(exp (c 0 Pi))',
+        '(map (lambda (x) (* x x)) (list 1 2 3 4 5))',
+        '(define (fib n) (if (< n 2) n (+ (fib (- n 1)) (fib (- n 2))))) (map fib (list 0 1 2 3 4 5 6 7 8 9 10))',
+        '(define (fact n) (if (<= n 1) 1 (* n (fact (- n 1))))) (fact 10)',
+        '(filter (lambda (x) (> x 5)) (map (lambda (x) (* x x)) (list 1 2 3 4 5)))',
+        '(fold + 0 (list 1 2 3 4 5 6 7 8 9 10))',
+        '(let ((x 10) (y 20)) (+ x y))',
+        '(let loop ((x 5)) (if (< x 1) null (begin (displayln x) (loop (- x 1)))))',
+        '(car (cdr (list 1 2 3 4 5)))',
     ];
     const listEl = $("example-list");
     for (const ex of EXAMPLES) {
